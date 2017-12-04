@@ -2,6 +2,8 @@
 #include<string>
 #include<cassert>
 #include <climits>
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 string run_length_encode(string s)
@@ -53,15 +55,25 @@ string generateString() {
 
 int main()
 {
-    srand(time(NULL));
-    
-   const int NUM_TRIALS =50;
-    string test, modified;
-    for(int i = 0; i < NUM_TRIALS; i++) {
-        test = generateString();
-        assert(test == decompress_run_length(run_length_encode(test)));
-    }
+    ifstream in;
+    ofstream out;
+    in.open("test.txt");
+    out.open("RLE_compressed.txt");
+    string input, output;
+    stringstream buffer;
 
-    std::cout << "Hurray!" << std::endl;
-
+    buffer << in.rdbuf();
+    input = buffer.str();
+    output = run_length_encode(input);
+    out << output;
+    ofstream out2; ifstream in2;
+    in2.open("RLE_compressed.txt", ios::in);
+    std::string input2( (std::istreambuf_iterator<char>(in2) ),
+                       (std::istreambuf_iterator<char>()    ) );
+    string output2 = decompress_run_length(input2);
+    out2.open("RLE_Decompressed.txt");
+    out2 << output2;
+    in.close();
+    out.close();
+    out2.close();
 }
