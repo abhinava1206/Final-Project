@@ -13,3 +13,5 @@ Wikipedia entries:
 https://en.wikipedia.org/wiki/Run-length_encoding
 https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch
 
+YouTube video of me demonstrating how my project functions on my computer:
+https://youtu.be/oPFE5rNjpj8
