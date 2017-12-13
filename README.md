@@ -15,3 +15,5 @@ https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch
 
 YouTube video of me demonstrating how my project functions on my computer:
 https://youtu.be/oPFE5rNjpj8
+
+All the relevant files have been included separately and within the Qt application folder. The files in the folder should be enough for the project to compile and work on Qt creator.
