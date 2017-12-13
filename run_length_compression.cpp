@@ -10,7 +10,7 @@ string run_length_encode(string s)
 {
     if (s == "")
     {
-        return s;
+        return s; // base case
     }
     string encoded_string = "";
     char i = s[0];
@@ -22,13 +22,13 @@ string run_length_encode(string s)
         count ++;
     }
     encoded_string += count;
-    return encoded_string + run_length_encode(s);
+    return encoded_string + run_length_encode(s); // call for recursion
 }
 
 string decompress_run_length(string s) {
     if (s == "")
     {
-        return s;
+        return s; // base case
     }
     char i = s[0];
     unsigned char j = s[1];
@@ -38,11 +38,11 @@ string decompress_run_length(string s) {
         decompressed += i;
     }
     s.erase(0,2);
-    return decompressed + decompress_run_length(s);
+    return decompressed + decompress_run_length(s); // call for recursion
 
 }
 
-string generateString() {
+string generateString() { // generates random string
     string s;
     long length = rand() % 10;
     while(length--) {
@@ -55,7 +55,7 @@ string generateString() {
 
 int main()
 {
-    ifstream in;
+    ifstream in; // code I put in for debugging, not relevant
     ofstream out;
     in.open("test.txt");
     out.open("RLE_compressed.txt");
